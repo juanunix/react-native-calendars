@@ -38,6 +38,8 @@ class CalendarListItem extends Component {
           monthFormat={this.props.monthFormat}
           dayComponent={this.props.dayComponent}
           disabledByDefault={this.props.disabledByDefault}
+          
+          currentCarId={this.props.currentCarId}
         />);
     } else {
       const text = row.toString();

@@ -169,6 +169,8 @@ class Calendar extends Component {
           onPress={this.pressDay}
           date={xdateToData(day)}
           marking={this.getDateMarking(day)}
+
+          currentCarId={this.props.currentCarId}
         >
           {date}
         </DayComp>

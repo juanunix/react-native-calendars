@@ -183,6 +183,17 @@ class CalendarList extends Component {
         keyExtractor={(item, index) => index}
         initialScrollIndex={this.state.openDate ? this.getMonthIndex(this.state.openDate)-1 : false}
         getItemLayout={this.getItemLayout}
+
+        onStartShouldSetResponder={this.props.onStartShouldSetResponder}
+        onMoveShouldSetResponder={this.props.onMoveShouldSetResponder}
+        onResponderGrant={this.props.onResponderGrant}
+        onResponderReject={this.props.onResponderReject}
+        onResponderMove={this.props.onResponderMove}
+        onResponderRelease={this.props.onResponderRelease}
+        onResponderTerminationRequest={this.props.onResponderTerminationRequest}
+        onResponderTerminate={this.props.onResponderTerminate}
+        onStartShouldSetResponderCapture={this.props.onStartShouldSetResponderCapture}
+        onMoveShouldSetResponderCapture={this.props.onMoveShouldSetResponderCapture}
       />
     );
   }
