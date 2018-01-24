@@ -170,7 +170,7 @@ class Calendar extends Component {
           date={xdateToData(day)}
           marking={this.getDateMarking(day)}
 
-          currentCarId={this.props.currentCarId}
+          toDayComponent={this.props.toDayComponent}
         >
           {date}
         </DayComp>

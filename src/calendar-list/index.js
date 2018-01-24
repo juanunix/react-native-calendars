@@ -194,6 +194,8 @@ class CalendarList extends Component {
         onResponderTerminate={this.props.onResponderTerminate}
         onStartShouldSetResponderCapture={this.props.onStartShouldSetResponderCapture}
         onMoveShouldSetResponderCapture={this.props.onMoveShouldSetResponderCapture}
+
+        scrollEnabled={this.props.scrollEnabled}
       />
     );
   }

@@ -39,7 +39,7 @@ class CalendarListItem extends Component {
           dayComponent={this.props.dayComponent}
           disabledByDefault={this.props.disabledByDefault}
           
-          currentCarId={this.props.currentCarId}
+          toDayComponent={this.props.toDayComponent}
         />);
     } else {
       const text = row.toString();
