@@ -167,6 +167,7 @@ class CalendarList extends Component {
   render() {
     return (
       <FlatList
+        
         ref={(c) => this.listView = c}
         //scrollEventThrottle={1000}
         style={[this.style.container, this.props.style]}
@@ -196,6 +197,7 @@ class CalendarList extends Component {
         onMoveShouldSetResponderCapture={this.props.onMoveShouldSetResponderCapture}
 
         scrollEnabled={this.props.scrollEnabled}
+        onScroll={this.props.onScroll}
       />
     );
   }
