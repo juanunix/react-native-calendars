@@ -185,19 +185,25 @@ class CalendarList extends Component {
         initialScrollIndex={this.state.openDate ? this.getMonthIndex(this.state.openDate)-1 : false}
         getItemLayout={this.getItemLayout}
 
-        onStartShouldSetResponder={this.props.onStartShouldSetResponder}
-        onMoveShouldSetResponder={this.props.onMoveShouldSetResponder}
-        onResponderGrant={this.props.onResponderGrant}
-        onResponderReject={this.props.onResponderReject}
-        onResponderMove={this.props.onResponderMove}
-        onResponderRelease={this.props.onResponderRelease}
-        onResponderTerminationRequest={this.props.onResponderTerminationRequest}
-        onResponderTerminate={this.props.onResponderTerminate}
-        onStartShouldSetResponderCapture={this.props.onStartShouldSetResponderCapture}
-        onMoveShouldSetResponderCapture={this.props.onMoveShouldSetResponderCapture}
+        // onStartShouldSetResponder={this.props.onStartShouldSetResponder}
+        // onMoveShouldSetResponder={this.props.onMoveShouldSetResponder}
+        // onResponderGrant={this.props.onResponderGrant}
+        // onResponderReject={this.props.onResponderReject}
+        // onResponderMove={this.props.onResponderMove}
+        // onResponderRelease={this.props.onResponderRelease}
+        // onResponderTerminationRequest={this.props.onResponderTerminationRequest}
+        // onResponderTerminate={this.props.onResponderTerminate}
+        // onStartShouldSetResponderCapture={this.props.onStartShouldSetResponderCapture}
+        // onMoveShouldSetResponderCapture={this.props.onMoveShouldSetResponderCapture}
 
         scrollEnabled={this.props.scrollEnabled}
         onScroll={this.props.onScroll}
+
+        onTouchStart={this.props.onTouchStart}
+        onTouchMove={this.props.onTouchMove}
+        onTouchEnd={this.props.onTouchEnd}
+        onTouchCancel={this.props.onTouchCancel}
+        onTouchEndCapture={this.props.onTouchEndCapture}
       />
     );
   }
