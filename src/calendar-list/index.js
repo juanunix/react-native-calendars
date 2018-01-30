@@ -198,6 +198,7 @@ class CalendarList extends Component {
 
         scrollEnabled={this.props.scrollEnabled}
         onScroll={this.props.onScroll}
+        pointerEvents={this.props.pointerEvents}
 
         onTouchStart={this.props.onTouchStart}
         onTouchMove={this.props.onTouchMove}
