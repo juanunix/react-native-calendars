@@ -164,6 +164,11 @@ class CalendarList extends Component {
     return diffMonths;
   }
 
+  stopScroll = (y) => {
+    // console.log('stop', y);
+    this.listView.scrollToOffset({animated:false, offset:y});
+  }
+
   render() {
     return (
       <FlatList
@@ -198,6 +203,9 @@ class CalendarList extends Component {
 
         scrollEnabled={this.props.scrollEnabled}
         onScroll={this.props.onScroll}
+        // onScrollEndDrag={(e)=>console.log('onScrollEndDrag', e.nativeEvent.contentOffset.y)}
+        // onScrollAnimationEnd={(e)=>console.log('onScrollAnimationEnd', e.nativeEvent.contentOffset.y)}
+        // onScrollBeginDrag={(e)=>console.log('onScrollBeginDrag', e.nativeEvent.contentOffset.y)}
         pointerEvents={this.props.pointerEvents}
 
         onTouchStart={this.props.onTouchStart}
