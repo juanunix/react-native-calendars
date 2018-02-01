@@ -164,10 +164,29 @@ class CalendarList extends Component {
     return diffMonths;
   }
 
-  stopScroll = (y) => {
+  scrollToOffset = (param) => {
     // console.log('stop', y);
-    this.listView.scrollToOffset({animated:false, offset:y});
+    this.listView.scrollToOffset(param);
   }
+/*
+  initialScroll = true;
+  flastlistOffsetY = 0;
+  onScroll = (e) => {
+    this.flastlistOffsetY = e.nativeEvent.contentOffset.y;
+    this.props.onScroll(e);
+
+    if(this.initialScroll){
+      this.initialScroll = false;
+      console.log('initial Scroll', this.flastlistOffsetY, this.screenHeight);
+      this.scrollToDay(new Date(), -this.screenHeight/2, false);
+    }
+  }
+
+  screenHeight = 0;
+  onLayout = (e) => {
+    this.screenHeight = e.nativeEvent.layout.height;
+  }
+  */
 
   render() {
     return (
@@ -187,7 +206,7 @@ class CalendarList extends Component {
         showsVerticalScrollIndicator={this.props.showScrollIndicator !== undefined ? this.props.showScrollIndicator : false}
         scrollEnabled={this.props.scrollingEnabled !== undefined ? this.props.scrollingEnabled : true}
         keyExtractor={(item, index) => index}
-        initialScrollIndex={this.state.openDate ? this.getMonthIndex(this.state.openDate) : false}
+        initialScrollIndex={this.state.openDate ? this.getMonthIndex(this.state.openDate)-1 : false}
         getItemLayout={this.getItemLayout}
 
         // onStartShouldSetResponder={this.props.onStartShouldSetResponder}
@@ -207,6 +226,7 @@ class CalendarList extends Component {
         // onScrollAnimationEnd={(e)=>console.log('onScrollAnimationEnd', e.nativeEvent.contentOffset.y)}
         // onScrollBeginDrag={(e)=>console.log('onScrollBeginDrag', e.nativeEvent.contentOffset.y)}
         pointerEvents={this.props.pointerEvents}
+        // onLayout={this.onLayout}
 
         onTouchStart={this.props.onTouchStart}
         onTouchMove={this.props.onTouchMove}
